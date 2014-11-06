@@ -9,7 +9,12 @@ Created by CDW on 2014.11.06
 import matplotlib.pyplot as plt
 import numpy as np
 
+## Globals
+DIST_CENTER = 0
+DIST_SKEW = 1
 
+
+## Support functions
 def show_bryant(data_length=500000, bins=100):
     """Create some data with the gumbel distribution, then plot it as a histogram
     Takes:
@@ -18,11 +23,11 @@ def show_bryant(data_length=500000, bins=100):
     Gives:
         None
     """
-    data = np.random.gumbel(0,1,data_length)
+    data = np.random.gumbel(DIST_CENTER,DIST_SKEW,data_length)
     plt.hist(data, bins)
     plt.show()
 
-
+## Boilerplate
 def main():
     show_bryant(10000, 50)
 
